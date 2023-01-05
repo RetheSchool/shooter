@@ -1,6 +1,5 @@
-// create canvas element
-var canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
+// get canvas element
+var canvas = document.getElementById("game");
 
 // set canvas dimensions
 canvas.width = window.innerWidth;
@@ -38,39 +37,4 @@ function draw() {
 }
 
 // move player based on keyboard input
-document.addEventListener("keydown", function(event) {
-    if (event.keyCode === 37) { // left arrow
-        player.x -= player.speed;
-    } else if (event.keyCode === 38) { // up arrow
-        player.y -= player.speed;
-    } else if (event.keyCode === 39) { // right arrow
-        player.x += player.speed;
-    } else if (event.keyCode === 40) { // down arrow
-        player.y += player.speed;
-    }
-});
-
-// check for collisions between player and enemy
-function checkCollision() {
-    var playerLeft = player.x;
-    var playerRight = player.x + player.width;
-    var playerTop = player.y;
-    var playerBottom = player.y + player.height;
-    var enemyLeft = enemy.x;
-    var enemyRight = enemy.x + enemy.width;
-    var enemyTop = enemy.y;
-    var enemyBottom = enemy.y + enemy.height;
-    if (playerRight > enemyLeft && playerLeft < enemyRight && playerBottom > enemyTop && playerTop < enemyBottom) {
-        // there is a collision, 
-    }
-}
-
-// main game loop
-function loop() {
-    draw();
-    checkCollision();
-    requestAnimationFrame(loop);
-}
-
-// start game loop
-loop();
+document.
